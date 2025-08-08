@@ -30,9 +30,8 @@ def get_entry(title):
     Retrieves an encyclopedia entry by its title. If no such
     entry exists, the function returns None.
     """
-    message = "This article is currently Unavailable"
     try:
         f = default_storage.open(f"entries/{title}.md")
         return f.read().decode("utf-8")
     except FileNotFoundError:
-        return message
+        return None

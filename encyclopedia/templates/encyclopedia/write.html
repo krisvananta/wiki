@@ -6,6 +6,11 @@
 
 {% block body %}
     
-    {{ entry }}
+    <h1>Create a New Article</h1>
+    <form action="{% url 'write' %}" method="POST">
+        {% csrf_token %}
+        {{ form }}
+        <button type="submit">save article</button>
+    </form>
 
 {% endblock %}
